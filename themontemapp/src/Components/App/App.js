@@ -7,7 +7,9 @@ class App extends Component {
     return (
       <div>
         This is the app component
-        <Slider />
+        <div className='dock-slider'>
+          <Slider />
+        </div>
       </div>
     );
   }
