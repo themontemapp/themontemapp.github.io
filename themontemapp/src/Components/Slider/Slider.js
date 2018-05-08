@@ -30,7 +30,7 @@ class Slider extends Component {
     );
     setTimeout(
       () => this.setState({ isBulletExpanded: true }),
-      3001
+      3000
     )
   }
 
@@ -44,6 +44,7 @@ class Slider extends Component {
 
     return (
       <div>
+        <Battery sliderState={sliderState} />
         <p>Slider value {sliderState}</p>
         <div className='slider-container'>
           <div className='slider-wrapper'>
@@ -56,9 +57,9 @@ class Slider extends Component {
               snapPoints={[0, 1000, 2000, 3000, 4000]}
             />
             <div className='below-slider' style={{ left: sliderState * 0.025 + '%' }} />
-            <div className={bulletStyle}>
+            {/* <div className={bulletStyle}>
               {isBulletExpanded && <p style={{color: 'white'}}>{sliderState}</p>}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -67,3 +68,44 @@ class Slider extends Component {
 }
 
 export default Slider;
+
+
+class Battery extends Component {
+  render() {
+
+    const { sliderState } = this.props;
+
+    let bat1 = 'battery';
+    let bat2 = 'battery';
+    let bat3 = 'battery';
+    let bat4 = 'battery';
+
+    let bg1;
+    let bg2;
+    let bg3;
+    let bg4;
+
+    if (sliderState > 0) {
+      bg1 = `rgb(0,128,0, ${sliderState / 1000})`;
+    }
+    if (sliderState > 999) {
+      bg2 = `rgb(0,128,0, ${(sliderState - 1000) / 1000})`;
+    }
+    if (sliderState > 1999) {
+      bg3 = `rgb(0,128,0, ${(sliderState - 2000) / 1000})`;
+    }
+    if (sliderState > 2999) {
+      bg4 = `rgb(0,128,0, ${(sliderState - 3000) / 1000})`;
+    }
+
+    return (
+      <div className='battery-wrapper'>
+        <div style={{ backgroundColor: bg1 }} className={bat1} />
+        <div style={{ backgroundColor: bg2 }} className={bat2} />
+        <div style={{ backgroundColor: bg3 }} className={bat3} />
+        <div style={{ backgroundColor: bg4 }} className={bat4} />
+        <div className='battery-nob' />
+      </div>
+    )
+  }
+}
