@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Slider from '../Slider/Slider';
-import Button from '../Button/Button';
 
 class App extends Component {
 
@@ -14,7 +13,7 @@ class App extends Component {
       <div>
         This is the app component
         <div className='dock-slider'>
-          <Slider />
+          <Slider  />
         </div>
       </div>
     );

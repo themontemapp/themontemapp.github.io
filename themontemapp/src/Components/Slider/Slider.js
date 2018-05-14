@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Rheostat from 'rheostat';
 
 import './Slider.css';
+import Button from '../Button/Button';
 
 class Slider extends Component {
 
@@ -45,7 +46,10 @@ class Slider extends Component {
     return (
       <div className='slider-block'>
         {/* <Battery sliderState={sliderState} /> */}
-        <BatteryNew sliderState={sliderState}/>
+        <div style={{textAlign: 'center'}}>
+          <Button text='I feel slightly relaxed' returnValue='testing' imageSource='./assets/img/icon-right.svg' onClick={(e) => console.log(e)} />
+        </div>
+        <Battery sliderState={sliderState} />
         {/* <p>Slider value {sliderState}</p> */}
         <div className='slider-container'>
           <div className='slider-wrapper'>
@@ -82,52 +86,9 @@ const Pits = () => (
   </div>
 )
 
-class Battery extends Component {
-  render() {
 
-    const { sliderState } = this.props;
 
-    let bat1 = 'battery';
-    let bat2 = 'battery';
-    let bat3 = 'battery';
-    let bat4 = 'battery';
-
-    let bg1 = 0;
-    let bg2 = 0;
-    let bg3 = 0;
-    let bg4 = 0;
-
-    if (sliderState > 0) {
-      bg1 = `rgb(0,128,0, ${sliderState / 1000})`;
-    }
-    if (sliderState > 999) {
-      bg2 = `rgb(0,128,0, ${(sliderState - 1000) / 1000})`;
-    }
-    if (sliderState > 1999) {
-      bg3 = `rgb(0,128,0, ${(sliderState - 2000) / 1000})`;
-    }
-    if (sliderState > 2999) {
-      bg4 = `rgb(0,128,0, ${(sliderState - 3000) / 1000})`;
-    }
-
-    return (
-      <div className='battery-wrapper'>
-        <div style={{ backgroundColor: bg1 }} className={bat1} />
-        <div style={{ backgroundColor: bg2 }} className={bat2} />
-        <div style={{ backgroundColor: bg3 }} className={bat3} />
-        <div style={{ backgroundColor: bg4 }} className={bat4} />
-        <div className='battery-nob' />
-      </div>
-    )
-  }
-}
-
-const BatteryNew = ({ sliderState }) => {
-
-  // if (sliderState > 0) bg1 = `rgb(0,128,0, ${sliderState / 1000})`;
-  // if (sliderState > 999) bg2 = `rgb(0,128,0, ${(sliderState - 1000) / 1000})`;
-  // if (sliderState > 1999) bg3 = `rgb(0,128,0, ${(sliderState - 2000) / 1000})`;
-  // if (sliderState > 2999) bg4 = `rgb(0,128,0, ${(sliderState - 3000) / 1000})`;
+const Battery = ({ sliderState }) => {
 
   let bg1 = 0;
   let bg2 = 0;
@@ -138,8 +99,6 @@ const BatteryNew = ({ sliderState }) => {
   if (sliderState > 999) bg2 = `${(sliderState - 1000) / 1000}`;
   if (sliderState > 1999) bg3 = `${(sliderState - 2000) / 1000}`;
   if (sliderState > 2999) bg4 = `${(sliderState - 3000) / 1000}`;
-
-  //console.log(bg1);
 
   return (
     <div className='battery-wrapper'>
