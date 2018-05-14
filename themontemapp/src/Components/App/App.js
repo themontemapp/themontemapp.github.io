@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import Slider from '../Slider/Slider';
+import Button from '../Button/Button';
 
 class App extends Component {
+
+  onButtonPress = (buttonValue) => {
+    console.log(buttonValue);
+  }
+
   render() {
     return (
       <div>
