@@ -1,9 +1,31 @@
 export const getData = () => ({
-    conversation: [
-        {
+    introConversation: {
+        start: {
             type: 'button',
             bot: {
-                prompts: ['How are you doing', 'And something about Monti', 'somethin more about med'],
+                prompts: ['How are you doing'],
+                responds: 'That sounds something'
+            },
+            user: {
+                options: [
+                    {
+                        answer: 'Fine',
+                        value: 1,
+                    },
+                    {
+                        answer: 'Alright',
+                        value: 2,
+                    }
+                ],
+                answer: null
+            }
+        }
+    },
+    conversation: {
+        test: {
+            type: 'button',
+            bot: {
+                prompts: ['How are you doing'],
                 responds: 'That sounds something'
             },
             user: {
@@ -20,32 +42,32 @@ export const getData = () => ({
                 answer: null
             }
         },
-        {
+        energy: {
             type: 'slider',
             bot: {
-                prompts: ['How relaxed do you feel right now?'],
+                prompts: ['How much energy do you have to spare?'],
                 responds: []
             },
             user: {
                 options: [
                     {
-                        answer: 'Not relaxed',
+                        answer: "I don't feel energetic at all",
                         value: 1
                     },
                     {
-                        answer: 'Slightly relaxed',
+                        answer: "I don't feel energetic",
                         value: 2
                     },
                     {
-                        answer: 'Relaxed',
+                        answer: 'I feel slightly energetic',
                         value: 3
                     },
                     {
-                        answer: 'Relaxed',
+                        answer: 'I feel energetic',
                         value: 4
                     },
                     {
-                        answer: 'Very relaxed',
+                        answer: 'I feel very energetic',
                         value: 5
                     },
                 ],
@@ -55,7 +77,7 @@ export const getData = () => ({
                 }
             }
         }
-    ],
+    },
     conversationHistory: [
         {
             time: null,
