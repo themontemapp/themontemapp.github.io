@@ -1,37 +1,29 @@
 import React, { Component } from 'react';
 import './App.css';
+import Slider from '../Slider/Slider';
 
 import { getData } from '../../Data/dataStructure'
 
 class App extends Component {
+
+  onButtonPress = (buttonValue) => {
+    console.log(buttonValue);
+  }
+
   render() {
 
     console.log(getData());
-
     return (
       <div>
-        {/* This is the app component¨ */}
-        {
-          getData().conversation.map((con, i) => {
-            return (
-              <div key={i}>
-                <div>
-                  {con.bot.prompts.map(prompt =>
-                    <p key={prompt}>{prompt}</p>
-                  )}
-                </div>
-                <div>
-                  {con.user.options.map(opt =>
-                    <p style={{ textAlign: 'right' }} key={opt.value}>{opt.answer}</p>
-                  )}
-                </div>
-              </div>
-            )
-          })
-        }
+        This is the app component
+        <div className='dock-slider'>
+          <Slider  />
+        </div>
+
       </div>
     )
   }
 }
 
 export default App;
+  
