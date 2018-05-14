@@ -5,6 +5,7 @@
   cursor: pointer;
   text-align: left;
   border: 0;
+  outline: 0;
   border-radius: 20px;
   margin: 0 auto;
   background-color: #00e9ba;
@@ -14,14 +15,23 @@
   color: #ffffff;
 }
 
-.button:active {
-  transform: translate(0, 2px);
+.simple-button {
+  cursor: pointer;
+  text-align: center;
+  border: 0;
+  outline: 0;
+  margin: 0 auto;
+  font-family: ProximaNova;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: white;
+  color: #00e9ba;
 }
 
 .icon {
   width: 24px;
   height: 24px;
-  margin: -4px -14px -10px 10px;
+  margin: -4px -14px -6px 8px;
   object-fit: contain;
   float: right;
 }

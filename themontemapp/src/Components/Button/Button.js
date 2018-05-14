@@ -9,15 +9,18 @@ class Button extends Component {
 
   render() {
     let imageClass;
+    let buttonClass = "button";
 
     if (this.props.imageSource) {
       imageClass = "icon";
+    } else if (this.props.type === "simple") {
+      buttonClass = "simple-button";
     }
 
     return (
       <div>
-        <button className="button" onClick={this.handleClick}> {this.props.text}
-        <img src={this.props.imageSource} className= { imageClass }></img>
+        <button className= {buttonClass} onClick={this.handleClick}> {this.props.text}
+        <img src={this.props.imageSource} className= {imageClass}></img>
         </button>
       </div>
     );
