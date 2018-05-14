@@ -13,6 +13,10 @@ const Chatbubble = (props) => {
     <div className={container}>
       <div className={bubbleClass}>
       <p>{props.chatbubbleContent}</p>
+      {
+        props.children && 
+        props.children
+      }
       </div>
     </div>
   );

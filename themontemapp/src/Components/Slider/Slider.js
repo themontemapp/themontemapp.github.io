@@ -10,47 +10,40 @@ class Slider extends Component {
     super();
     this.state = {
       sliderState: [2000],
-      fireBullet: false,
-      expandBullet: false,
-      isBulletExpanded: false
+      sliderValue: 2
     }
-    setTimeout(
-      () => this.setState({ fireBullet: true }),
-      10
-    )
   }
 
   setValue = (e) => {
     this.setState({ sliderState: e.values })
+
+    const calcValue = e.values[0] / 1000;
+
+    if (calcValue < 0.5 && calcValue >= 0)
+      this.setState({ sliderValue: 0 });
+    if (calcValue < 1.5 && calcValue > 0.5)
+      this.setState({ sliderValue: 1 });
+    if (calcValue < 2.5 && calcValue > 1.5)
+      this.setState({ sliderValue: 2 });
+    if (calcValue < 3.5 && calcValue > 2.5)
+      this.setState({ sliderValue: 3 });
+    if (calcValue <= 4 && calcValue > 3.5)
+      this.setState({ sliderValue: 4 });
   }
 
-  componentDidMount() {
-    setTimeout(
-      () => this.setState({ expandBullet: true }),
-      2500
-    );
-    setTimeout(
-      () => this.setState({ isBulletExpanded: true }),
-      3000
-    )
-  }
+  updateValue = () =>
+    this.props.updateValue(this.state.sliderValue, this.props.sliderData.user.options[this.state.sliderValue].answer);
 
   render() {
-    const { sliderState, fireBullet, expandBullet, isBulletExpanded } = this.state;
-
-    let bulletStyle = 'bullet';
-
-    if (fireBullet) bulletStyle += ' bullet-move';
-    if (expandBullet) bulletStyle += ' bullet-expanded';
+    const { sliderState, sliderValue } = this.state;
+    const { user } = this.props.sliderData;
 
     return (
       <div className='slider-block'>
-        {/* <Battery sliderState={sliderState} /> */}
-        <div style={{textAlign: 'center'}}>
-          <Button text='I feel slightly relaxed' returnValue='testing' imageSource='./assets/img/icon-right.svg' onClick={(e) => console.log(e)} />
+        <div style={{ textAlign: 'center' }}>
+          <Button text={user.options[sliderValue].answer} returnValue={user.options[sliderValue].value} imageSource='./assets/img/icon-right.svg' onClick={this.updateValue} />
         </div>
         <Battery sliderState={sliderState} />
-        {/* <p>Slider value {sliderState}</p> */}
         <div className='slider-container'>
           <div className='slider-wrapper'>
             <Rheostat
@@ -62,10 +55,6 @@ class Slider extends Component {
               snapPoints={[0, 1000, 2000, 3000, 4000]}
             />
             <img src='./assets/img/handle-curve.svg' className='below-slider' style={{ left: sliderState * 0.025 + '%' }} />
-            {/* <div className='below-slider' style={{ left: sliderState * 0.025 + '%' }} /> */}
-            {/* <div className={bulletStyle}>
-              {isBulletExpanded && <p style={{color: 'white'}}>{sliderState}</p>}
-            </div> */}
             <Pits />
           </div>
         </div>
@@ -86,9 +75,7 @@ const Pits = () => (
   </div>
 )
 
-
-
-const Battery = ({ sliderState }) => {
+export const Battery = ({ sliderState }) => {
 
   let bg1 = 0;
   let bg2 = 0;
@@ -176,3 +163,39 @@ const Battery = ({ sliderState }) => {
     </div>
   )
 }
+
+
+
+// componentDidMount() {
+//   setTimeout(
+//     () => this.setState({ expandBullet: true }),
+//     2500
+//   );
+//   setTimeout(
+//     () => this.setState({ isBulletExpanded: true }),
+//     3000
+//   )
+// }
+
+// fireBullet: false,
+//       expandBullet: false,
+//       isBulletExpanded: false
+
+// setTimeout(
+//   () => this.setState({ fireBullet: true }),
+//   10
+// )
+
+// <div className='below-slider' style={{ left: sliderState * 0.025 + '%' }} />
+//             <div className={bulletStyle}>
+//               {isBulletExpanded && <p style={{color: 'white'}}>{sliderState}</p>}
+//             </div>
+
+
+    // console.log()
+    // console.log(user);
+
+    // let bulletStyle = 'bullet';
+
+    // if (fireBullet) bulletStyle += ' bullet-move';
+    // if (expandBullet) bulletStyle += ' bullet-expanded';
