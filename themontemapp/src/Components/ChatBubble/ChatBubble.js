@@ -1,5 +1,5 @@
 import React from 'react';
-import './Chatbubble.css';
+import './ChatBubble.css';
 
 const Chatbubble = (props) => {
 

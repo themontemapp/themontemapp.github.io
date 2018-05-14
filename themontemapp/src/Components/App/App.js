@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Slider from '../Slider/Slider';
-import ChatBubble from '../ChatBubble/Chatbubble';
+import ChatBubble from '../ChatBubble/ChatBubble';
 import { getData } from '../../Data/dataStructure';
 import { Battery } from '../Slider/Slider';
 
