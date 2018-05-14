@@ -12,7 +12,6 @@ class App extends Component {
     return (
       <div>
         This is the app component
-        <Button text="test test test" returnValue="Ja" onClick={this.onButtonPress} imageSource="/assets/img/icon-right.svg"></Button>
       </div>
     );
   }
