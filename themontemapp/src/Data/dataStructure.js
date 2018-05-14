@@ -10,11 +10,11 @@ export const getData = () => ({
                 options: [
                     {
                         answer: 'Fine',
-                        value: 1
+                        value: 1,
                     },
                     {
                         answer: 'Alright',
-                        value: 2
+                        value: 2,
                     }
                 ],
                 answer: null
@@ -41,9 +41,13 @@ export const getData = () => ({
                         value: 3
                     },
                     {
-                        answer: 'Very relaxed',
+                        answer: 'Relaxed',
                         value: 4
-                    }
+                    },
+                    {
+                        answer: 'Very relaxed',
+                        value: 5
+                    },
                 ],
                 answer: {
                     answer: '',
