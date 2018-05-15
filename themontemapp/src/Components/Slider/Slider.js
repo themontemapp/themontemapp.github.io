@@ -36,14 +36,20 @@ class Slider extends Component {
 
   render() {
     const { sliderState, sliderValue } = this.state;
-    const { user } = this.props.sliderData;
+    const { sliderData } = this.props;
+    const { user } = sliderData;
 
     return (
       <div className='slider-block'>
         <div style={{ textAlign: 'center' }}>
           <Button text={user.options[sliderValue].answer} returnValue={user.options[sliderValue].value} imageSource='./assets/img/icon-right.svg' onClick={this.updateValue} />
         </div>
-        <Battery sliderState={sliderState} />
+        {
+          sliderData.name !== 'energy' ?
+            <Battery sliderState={sliderState} />
+            :
+            <ImageValue sliderState={sliderState} />
+        }
         <div className='slider-container'>
           <div className='slider-wrapper'>
             <Rheostat
@@ -164,6 +170,16 @@ export const Battery = ({ sliderState }) => {
   )
 }
 
+
+export const ImageValue = ({ sliderState }) => {
+  const sliderValue = sliderState / 1000;
+  
+  return (
+    <div>
+      Cat {sliderValue}
+    </div>
+  )
+}
 
 
 // componentDidMount() {
