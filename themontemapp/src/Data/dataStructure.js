@@ -200,6 +200,222 @@ export const getData = () => ({
                     value: null
                 }
             }
+        },
+        relax: {
+            name: 'relax',
+            type: 'slider',
+            bot: {
+                prompts: ['How relaxed do you feel?'],
+                responds: []
+            },
+            user: {
+                options: [
+                    {
+                        answer: "I don't feel relaxed at all",
+                        value: 1
+                    },
+                    {
+                        answer: "I don't feel relaxed",
+                        value: 2
+                    },
+                    {
+                        answer: 'I feel slightly relaxed',
+                        value: 3
+                    },
+                    {
+                        answer: 'I feel relaxed',
+                        value: 4
+                    },
+                    {
+                        answer: 'I feel very reaxed',
+                        value: 5
+                    },
+                ],
+                answer: {
+                    answer: '',
+                    value: null
+                }
+            }
+        },
+        clearThoughts: {
+            name: 'clearThoughts',
+            type: 'slider',
+            bot: {
+                prompts: ['How clear are your thoughts?'],
+                responds: []
+            },
+            user: {
+                options: [
+                    {
+                        answer: "I can't think clearly at all",
+                        value: 1
+                    },
+                    {
+                        answer: "I can't think clearly",
+                        value: 2
+                    },
+                    {
+                        answer: 'I slightly think clearly',
+                        value: 3
+                    },
+                    {
+                        answer: 'I think clearly',
+                        value: 4
+                    },
+                    {
+                        answer: 'I think very clearly',
+                        value: 5
+                    },
+                ],
+                answer: {
+                    answer: '',
+                    value: null
+                }
+            }
+        },
+        confident: {
+            name: 'confident',
+            type: 'slider',
+            bot: {
+                prompts: ['How confident do you feel?'],
+                responds: []
+            },
+            user: {
+                options: [
+                    {
+                        answer: "I don't feel confident at all",
+                        value: 1
+                    },
+                    {
+                        answer: "I don't feel confident",
+                        value: 2
+                    },
+                    {
+                        answer: 'I feel slightly confident',
+                        value: 3
+                    },
+                    {
+                        answer: 'I feel confident',
+                        value: 4
+                    },
+                    {
+                        answer: 'I feel very confident',
+                        value: 5
+                    },
+                ],
+                answer: {
+                    answer: '',
+                    value: null
+                }
+            }
+        },
+        interestPeople: {
+            name: 'interestPeople',
+            type: 'slider',
+            bot: {
+                prompts: ['How interested are you in socialising?'],
+                responds: []
+            },
+            user: {
+                options: [
+                    {
+                        answer: "I don't feel interested in other people at all",
+                        value: 1
+                    },
+                    {
+                        answer: "I don't feel interested in other people",
+                        value: 2
+                    },
+                    {
+                        answer: 'I feel slightly interested in other people',
+                        value: 3
+                    },
+                    {
+                        answer: 'I feel interested in other people',
+                        value: 4
+                    },
+                    {
+                        answer: 'I feel very interested in other people',
+                        value: 5
+                    },
+                ],
+                answer: {
+                    answer: '',
+                    value: null
+                }
+            }
+        },
+        useful: {
+            name: 'useful',
+            type: 'slider',
+            bot: {
+                prompts: ['How useful do you feel?'],
+                responds: []
+            },
+            user: {
+                options: [
+                    {
+                        answer: "I don't feel useful at all",
+                        value: 1
+                    },
+                    {
+                        answer: "I don't feel useful",
+                        value: 2
+                    },
+                    {
+                        answer: 'I feel slightly useful',
+                        value: 3
+                    },
+                    {
+                        answer: 'I feel useful',
+                        value: 4
+                    },
+                    {
+                        answer: 'I feel very useful',
+                        value: 5
+                    },
+                ],
+                answer: {
+                    answer: '',
+                    value: null
+                }
+            }
+        },
+        problems: {
+            name: 'problems',
+            type: 'slider',
+            bot: {
+                prompts: ['How well do you deal with problems?'],
+                responds: []
+            },
+            user: {
+                options: [
+                    {
+                        answer: "I can't deal with problems at all",
+                        value: 1
+                    },
+                    {
+                        answer: "I can't deal with problems",
+                        value: 2
+                    },
+                    {
+                        answer: 'I can slightly deal with problems',
+                        value: 3
+                    },
+                    {
+                        answer: 'I can deal with problems',
+                        value: 4
+                    },
+                    {
+                        answer: 'I can very well deal with problems',
+                        value: 5
+                    },
+                ],
+                answer: {
+                    answer: '',
+                    value: null
+                }
+            }
         }
     },
     conversationHistory: [
