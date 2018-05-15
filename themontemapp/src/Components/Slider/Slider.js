@@ -31,8 +31,14 @@ class Slider extends Component {
       this.setState({ sliderValue: 4 });
   }
 
-  updateValue = () =>
+  updateValue = () => {
     this.props.updateValue(this.state.sliderValue, this.props.sliderData.user.options[this.state.sliderValue].answer);
+    this.setState({
+      sliderState: [2000],
+      sliderValue: 2
+    })
+  }
+    
 
   render() {
     const { sliderState, sliderValue } = this.state;
@@ -48,7 +54,7 @@ class Slider extends Component {
           sliderData.name === 'energy' ?
             <Battery sliderState={sliderState} />
             :
-            <ImageValue sliderName={sliderData.name} sliderState={sliderState} />
+            <ImageValue sliderName={sliderData.name} sliderValue={sliderValue} />
         }
         <div className='slider-container'>
           <div className='slider-wrapper'>
@@ -171,13 +177,11 @@ export const Battery = ({ sliderState }) => {
 }
 
 
-export const ImageValue = ({ sliderName, sliderState }) => {
-  const sliderValue = sliderState / 1000;
-  console.log(`.assets/img/${sliderName}-${sliderValue}`);
+export const ImageValue = ({ sliderName, sliderValue }) => {
+  // console.log(`.assets/img/${sliderName}-${sliderValue}`);
   return (
-    <div>
-      <img src={`.assets/img/${sliderName}-${sliderValue}`} />
-      {sliderName + '-' + sliderValue}
+    <div className='battery-wrapper'>
+      <img src={`./assets/img/${sliderName}-${sliderValue + 1}.svg`} />
     </div>
   )
 }

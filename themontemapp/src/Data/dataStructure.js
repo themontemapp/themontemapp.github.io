@@ -144,27 +144,6 @@ export const getData = () => ({
     },
     
     conversation: {
-        test: {
-            name: 'test',
-            type: 'button',
-            bot: {
-                prompts: ['How are you doing'],
-                responds: 'That sounds something'
-            },
-            user: {
-                options: [
-                    {
-                        answer: 'Fine',
-                        value: 1,
-                    },
-                    {
-                        answer: 'Alright',
-                        value: 2,
-                    }
-                ],
-                answer: null
-            }
-        },
         energy: {
             name: 'energy',
             type: 'slider',
