@@ -45,10 +45,10 @@ class Slider extends Component {
           <Button text={user.options[sliderValue].answer} returnValue={user.options[sliderValue].value} imageSource='./assets/img/icon-right.svg' onClick={this.updateValue} />
         </div>
         {
-          sliderData.name !== 'energy' ?
+          sliderData.name === 'energy' ?
             <Battery sliderState={sliderState} />
             :
-            <ImageValue sliderState={sliderState} />
+            <ImageValue sliderName={sliderData.name} sliderState={sliderState} />
         }
         <div className='slider-container'>
           <div className='slider-wrapper'>
@@ -171,12 +171,13 @@ export const Battery = ({ sliderState }) => {
 }
 
 
-export const ImageValue = ({ sliderState }) => {
+export const ImageValue = ({ sliderName, sliderState }) => {
   const sliderValue = sliderState / 1000;
-  
+  console.log(`.assets/img/${sliderName}-${sliderValue}`);
   return (
     <div>
-      Cat {sliderValue}
+      <img src={`.assets/img/${sliderName}-${sliderValue}`} />
+      {sliderName + '-' + sliderValue}
     </div>
   )
 }
