@@ -74,7 +74,10 @@ class App extends Component {
     return (
       <div>
         <ChatList chatListEntities={chatListEntities} />
-    { chatListEntities.length && <ActionArea entityType={chatListEntities[chatListEntities.length - 1]} updateStateValue={this.updateStateValue} shouldScroll={shouldScroll} /> }
+        {
+          chatListEntities.length &&
+          <ActionArea entityType={chatListEntities[chatListEntities.length - 1]} updateStateValue={this.updateStateValue} shouldScroll={shouldScroll} />
+        }
       </div>
     )
   }
