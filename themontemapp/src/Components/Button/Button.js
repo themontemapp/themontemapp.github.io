@@ -4,7 +4,7 @@ import './Button.css';
 class Button extends Component {
 
   handleClick = () => {
-    this.props.onClick(this.props.returnValue);
+    this.props.onClick(this.props.returnValue, this.props.text);
   }
 
   render() {

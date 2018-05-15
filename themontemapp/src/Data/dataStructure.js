@@ -1,6 +1,7 @@
 export const getData = () => ({
     introConversation: {
         start: {
+            name: 'start',
             type: 'button',
             bot: {
                 prompts: ["Hello, i'm Monti 👋", "I can help you find areas in the city that matches your state of mind.", "Shall we begin?"],
@@ -24,10 +25,14 @@ export const getData = () => ({
                         next: "readyToBegin", 
                     }
                 ],
-                answer: null
+                answer: {
+                    answer: null,
+                    value: null
+                }
             }
         },
         findAreas: {
+            name: 'findAreas',
             type: 'button',
             bot: {
                 prompts: ["I can hear 👂, smell 👃 and see 👀 things people normally cannot in the city.", "Me and my other friends measure this all the time.", "And we use this information to find areas."],
@@ -45,10 +50,15 @@ export const getData = () => ({
                         value: 2,
                         next: "readyToBegin", 
                     }
-                ]
+                ],
+                answer: {
+                    answer: null,
+                    value: null
+                }
             }
         },
         youAndYourFriends: {
+            name: 'youAndYourFriends',
             type: 'button',
             bot: {
                 prompts: ["Well there are sensors like me all over town.", "And we all work together."],
@@ -61,10 +71,15 @@ export const getData = () => ({
                         value: 1,
                         next: "readyToBegin",
                     }
-                ]
+                ],
+                answer: {
+                    answer: null,
+                    value: null
+                }
             }
         },
         howDoYouMatch: {
+            name: 'howDoYouMatch',
             type: 'button',
             bot: {
                 prompts: ["From my information about the city and your answers I can personalise a specific area to you.", "So tell me how you feel and I can help you find solitutude."],
@@ -77,10 +92,15 @@ export const getData = () => ({
                         value: 1,
                         next: "solitude"
                     }
-                ]
+                ],
+                answer: {
+                    answer: null,
+                    value: null
+                }
             }
         },
         solitude: {
+            name: 'solitude',
             type: 'button',
             bot: {
                 prompts: ["It's a state of mind, where you are able to relax, be creative, …", "Well you just feel content and reflects over issues."],
@@ -93,10 +113,15 @@ export const getData = () => ({
                         value: 1,
                         next: "readyToBegin",
                     },
-                ]
+                ],
+                answer: {
+                    answer: null,
+                    value: null
+                }
             }
         },
         readyToBegin: {
+            name: 'readyToBegin',
             type: 'button',
             bot: {
                 prompts: ["Okay, I'm gonna ask you a few questions", "When you answer think of how you feel right now 💖"],
@@ -109,13 +134,18 @@ export const getData = () => ({
                         value: 1,
                         next: "goToConversation",
                     },
-                ]
+                ],
+                answer: {
+                    answer: null,
+                    value: null
+                }
             }
         },
     },
     
     conversation: {
         test: {
+            name: 'test',
             type: 'button',
             bot: {
                 prompts: ['How are you doing'],
@@ -136,6 +166,7 @@ export const getData = () => ({
             }
         },
         energy: {
+            name: 'energy',
             type: 'slider',
             bot: {
                 prompts: ['How much energy do you have to spare?'],
