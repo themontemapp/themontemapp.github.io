@@ -27,7 +27,8 @@ export const getData = () => ({
                 ],
                 answer: {
                     answer: null,
-                    value: null
+                    value: null,
+                    next: null
                 }
             }
         },
@@ -53,7 +54,8 @@ export const getData = () => ({
                 ],
                 answer: {
                     answer: null,
-                    value: null
+                    value: null,
+                    next: null
                 }
             }
         },
@@ -74,7 +76,8 @@ export const getData = () => ({
                 ],
                 answer: {
                     answer: null,
-                    value: null
+                    value: null,
+                    next: null
                 }
             }
         },
@@ -95,7 +98,8 @@ export const getData = () => ({
                 ],
                 answer: {
                     answer: null,
-                    value: null
+                    value: null,
+                    next: null
                 }
             }
         },
@@ -116,7 +120,8 @@ export const getData = () => ({
                 ],
                 answer: {
                     answer: null,
-                    value: null
+                    value: null,
+                    next: null
                 }
             }
         },
@@ -137,7 +142,8 @@ export const getData = () => ({
                 ],
                 answer: {
                     answer: null,
-                    value: null
+                    value: null,
+                    next: null
                 }
             }
         },
